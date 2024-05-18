@@ -1,11 +1,7 @@
-using Azure;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
-using System.Net.Http;
 using System.Net.Http.Json;
-using System.Runtime.ConstrainedExecution;
 using Workout_API.DTO;
-using Workout_API.Models;
 
 namespace Workout_API_Test_Suite
 {
