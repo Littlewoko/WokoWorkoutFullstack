@@ -27,7 +27,7 @@ namespace Workout_API
 
         private static void ConfigureDatabase(WebApplicationBuilder builder)
         {
-            var configuration = Configuration.GetUserSecretsConfiguration();
+            var configuration = Configuration.GetConfiguration();
             string connectionString = Configuration.GetConfigurationItem("ConnectionString");
 
             builder.Services.AddDbContext<DBContext>(
