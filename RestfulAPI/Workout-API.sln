@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workout-API", "Workout-API.csproj", "{E2D1226E-B83B-4077-A35A-ED977A67B1A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workout-API-Test-Suite", "..\Workout-API-Test-Suite\Workout-API-Test-Suite.csproj", "{55BF6551-5459-434C-BA4E-1AD6D5007074}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workout-API-Test-Suite", "..\RestfulAPITestSuite\Workout-API-Test-Suite.csproj", "{50A16609-C25F-46CB-BCB7-24DD716E3614}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E2D1226E-B83B-4077-A35A-ED977A67B1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2D1226E-B83B-4077-A35A-ED977A67B1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2D1226E-B83B-4077-A35A-ED977A67B1A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55BF6551-5459-434C-BA4E-1AD6D5007074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55BF6551-5459-434C-BA4E-1AD6D5007074}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55BF6551-5459-434C-BA4E-1AD6D5007074}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55BF6551-5459-434C-BA4E-1AD6D5007074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A16609-C25F-46CB-BCB7-24DD716E3614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A16609-C25F-46CB-BCB7-24DD716E3614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A16609-C25F-46CB-BCB7-24DD716E3614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A16609-C25F-46CB-BCB7-24DD716E3614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

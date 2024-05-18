@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Workout-API\Workout-API.csproj" />
+    <ProjectReference Include="..\RestfulAPI\Workout-API.csproj" />
   </ItemGroup>
 
 </Project>
