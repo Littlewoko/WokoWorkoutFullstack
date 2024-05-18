@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System.Net.Http.Json;
 using Workout_API.DTO;
 
-namespace Workout_API_Test_Suite
+namespace Workout_API_Test_Suite.IntegrationTests
 {
     public class UserControllerTests
     {
@@ -63,25 +63,25 @@ namespace Workout_API_Test_Suite
                 new UserTransferObject
                 {
                     Name = Name,
-                    Email = String.Empty,
+                    Email = string.Empty,
                     Id = 0
                 },
                 new UserTransferObject
                 {
-                    Name = String.Empty,
+                    Name = string.Empty,
                     Email = Email,
                     Id = 0
                 },
                 new UserTransferObject
                 {
-                    Name = String.Empty,
+                    Name = string.Empty,
                     Email = invalidEmail,
                     Id = 0
                 },
                 new UserTransferObject
                 {
-                    Name = String.Empty,
-                    Email = String.Empty,
+                    Name = string.Empty,
+                    Email = string.Empty,
                     Id = 0
                 },
             };
