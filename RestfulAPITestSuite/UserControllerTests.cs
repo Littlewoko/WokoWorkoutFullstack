@@ -9,12 +9,17 @@ namespace Workout_API_Test_Suite
     {
         private static readonly string Name = "Test";
         private static readonly string Email = "test@email.com";
-        
+
+        private HttpClient httpClient;
+
+        public UserControllerTests()
+        {
+            httpClient = Utils.ScaffoldApplicationAndGetClient();
+        }
+
         [Fact]
         public async Task CreateUser()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             var response = await AttemptCreateValidUser(httpClient);
             response.EnsureSuccessStatusCode();
 
@@ -27,8 +32,6 @@ namespace Workout_API_Test_Suite
         [Fact]
         public async Task CreateInvalidUsersShouldFail()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             UserTransferObject[] invalidUsers = GetInvalidUsers();
 
             for (int i = 0; i < invalidUsers.Length; i++)
@@ -42,8 +45,6 @@ namespace Workout_API_Test_Suite
         [Fact]
         public async Task CreateUserThatAlreadyExistsShouldFail()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             await AttemptCreateValidUser(httpClient);
 
             var badCreateResponse = await AttemptCreateValidUser(httpClient);
@@ -91,8 +92,6 @@ namespace Workout_API_Test_Suite
         [Fact]
         public async Task GetUser()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             await AttemptCreateValidUser(httpClient);
             var response = await AttemptGetUser(httpClient, Email);
 
@@ -105,8 +104,6 @@ namespace Workout_API_Test_Suite
         [Fact]
         public async Task DeleteUser()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             await AttemptCreateValidUser(httpClient);
 
             var response = await httpClient.DeleteAsync($"/User?Email={Email}");
@@ -119,8 +116,6 @@ namespace Workout_API_Test_Suite
         [Fact]
         public async Task UpdateUser()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             // create a valid user
             await AttemptCreateValidUser(httpClient);
             var getResponse = await AttemptGetUser(httpClient, Email);
@@ -147,14 +142,12 @@ namespace Workout_API_Test_Suite
         [Fact]
         public async Task UpdateUserThatDoesNotExistShouldFail()
         {
-            var httpClient = Utils.ScaffoldApplicationAndGetClient();
-
             UserTransferObject user = new UserTransferObject()
             {
                 Name = Name,
-                Email = Email, 
+                Email = Email,
                 Id = 0
-                
+
             };
 
             var updateResponse = await AttemptUserUpdate(httpClient, user);
