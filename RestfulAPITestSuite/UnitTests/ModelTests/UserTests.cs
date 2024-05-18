@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Workout_API.Models;
 
-namespace Workout_API_Test_Suite.UnitTests
+namespace Workout_API_Test_Suite.UnitTests.ModelTests
 {
     public class UserTests
     {
@@ -45,7 +45,8 @@ namespace Workout_API_Test_Suite.UnitTests
             {
                 User user = new User(Email, Name, Id);
                 Assert.Fail("User instantiation should have failed due to empty name");
-            } catch(ArgumentException ex)
+            }
+            catch (ArgumentException ex)
             {
                 ex.Message.Should().Be("User name must not be null or empty");
             }
