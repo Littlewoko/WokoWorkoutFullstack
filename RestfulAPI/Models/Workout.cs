@@ -13,8 +13,18 @@ namespace Workout_API.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public List<Movement> Movements { get; set; }
+        public List<Movement>? Movements { get; set; }
     
         public User User { get; set; }
+
+        public Workout() { }
+
+        public Workout(int id, DateTime date, User user, List<Movement>? movements = null)
+        {
+            Id = id;
+            Date = date;
+            User = user;
+            Movements = movements != null ? movements : new List<Movement>();
+        }
     }
 }

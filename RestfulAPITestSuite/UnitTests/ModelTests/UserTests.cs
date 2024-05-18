@@ -10,7 +10,7 @@ namespace Workout_API_Test_Suite.UnitTests.ModelTests
 {
     public class UserTests
     {
-        const int testId = 10;
+        const int TestId = 10;
         const string ValidName = "Test";
         const string ValidEmail = "test@email.com";
 
@@ -28,17 +28,17 @@ namespace Workout_API_Test_Suite.UnitTests.ModelTests
         [Fact]
         public void InstantiateValidUserWithId()
         {
-            User ValidUser = new User(ValidEmail, ValidName, testId);
+            User ValidUser = new User(ValidEmail, ValidName, TestId);
 
             Assert.NotNull(ValidUser);
             ValidUser.Name.Should().Be(ValidName);
             ValidUser.Email.Should().Be(ValidEmail);
-            ValidUser.Id.Should().Be(testId);
+            ValidUser.Id.Should().Be(TestId);
         }
 
         [Theory]
-        [InlineData(ValidEmail, "", testId)]
-        [InlineData(ValidEmail, null, testId)]
+        [InlineData(ValidEmail, "", TestId)]
+        [InlineData(ValidEmail, null, TestId)]
         public void InstantiateUserWithNoNameShouldFail(string Email, string Name, int Id)
         {
             try
@@ -53,11 +53,11 @@ namespace Workout_API_Test_Suite.UnitTests.ModelTests
         }
 
         [Theory]
-        [InlineData("", ValidName, testId)]
-        [InlineData("test", ValidName, testId)]
-        [InlineData("test.com", ValidName, testId)]
-        [InlineData("test@.com", ValidName, testId)]
-        [InlineData(".com@test.co.,uk", ValidName, testId)]
+        [InlineData("", ValidName, TestId)]
+        [InlineData("test", ValidName, TestId)]
+        [InlineData("test.com", ValidName, TestId)]
+        [InlineData("test@.com", ValidName, TestId)]
+        [InlineData(".com@test.co.,uk", ValidName, TestId)]
         public void InstantiateUserWithInvalidEmailShouldFail(string Email, string Name, int Id)
         {
             try
