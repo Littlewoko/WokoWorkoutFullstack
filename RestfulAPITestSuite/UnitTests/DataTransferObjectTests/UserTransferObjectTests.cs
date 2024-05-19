@@ -23,7 +23,7 @@ namespace Workout_API_Test_Suite.UnitTests.DataTransferObjectTests
             userTransferObject.Name = Name;
             userTransferObject.Email = Email;
 
-            User userObject = userTransferObject.ToUser();
+            User userObject = (User)userTransferObject.ToObject();
 
             Assert.NotNull(userObject);
             userObject.Id.Should().Be(Id);

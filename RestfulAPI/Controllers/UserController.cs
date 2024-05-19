@@ -48,7 +48,7 @@ namespace Workout_API.Controllers
         {
             try
             {
-                User newUser = _newUser.ToUser();
+                User newUser = (User)_newUser.ToObject();
                 HandleCreateUser(newUser);
                 return CreatedAtRoute("GetUser", new { newUser.Email }, newUser);
             }
@@ -63,7 +63,7 @@ namespace Workout_API.Controllers
         {
             try
             {
-                User updatedUser = _updatedUser.ToUser();
+                User updatedUser = (User)_updatedUser.ToObject();
 
                 User? user = UserUtils.HandleGetUser(_context, updatedUser.Email);
                 if (user == null)

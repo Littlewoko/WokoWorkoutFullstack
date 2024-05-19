@@ -2,13 +2,13 @@
 
 namespace Workout_API.DTO
 {
-    public class UserTransferObject
+    public class UserTransferObject : IDataTransferObject
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public User ToUser()
+        public object ToObject()
         {
             return new User(Email, Name, Id);
         }
